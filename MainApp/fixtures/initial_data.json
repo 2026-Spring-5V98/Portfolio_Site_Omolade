@@ -1,487 +1,487 @@
-﻿[
-{
-  "model": "MainApp.profile",
-  "pk": 1,
-  "fields": {
-    "name": "O. Daniel Famuyide",
-    "tagline": "MS Information Systems | IT Business Analyst | Logistics Specialist",
-    "bio": "I am a Business Analytics graduate candidate with over four years of experience in supply chain, logistics, and operational improvement, combining data analytics, Artificial Intelligence (AI), and Information Systems to drive smarter business decisions. I specialize in transforming operational data into actionable insights that improve efficiency, reduce costs, and optimize business performance.\r\n\r\nMy experience includes delivering measurable results such as reducing logistics costs by 18% and improving delivery performance by 25% through data-driven strategies, process optimization, and technology-enabled decision-making. I have worked extensively with enterprise systems and operational workflows to support continuous improvement initiatives and business transformation.\r\n\r\nI am passionate about leveraging technology, automation, and information systems to solve complex business problems. My interests span Business Analytics, Supply Chain Intelligence, AI applications in operations, and IT-enabled process innovation.",
-    "headshot": "",
-    "email": "omoladedaniel@gmail.com",
-    "phone": "(254) 759-9559",
-    "location": "Waco, Texas",
-    "github": "https://github.com/omoladedaniel-netizen",
-    "linkedin": "https://linkedin.com/in/omolade-d-famuyide",
-    "twitter": "",
-    "resume_summary": "Skilled at leveraging Python, R, SQL, Tableau, Power BI, Excel, and ERP systems to transform data into actionable insights, reduce costs, and streamline processes. Proven ability to standardize operations, improve efficiency, and integrate technology solutions across logistics and supply chain functions.",
-    "resume_pdf": ""
+[
+  {
+    "model": "MainApp.profile",
+    "pk": 1,
+    "fields": {
+      "name": "O. Daniel Famuyide",
+      "tagline": "MS Information Systems | IT Business Analyst | Logistics Specialist",
+      "bio": "I am a Business Analytics graduate candidate with over four years of experience in supply chain, logistics, and operational improvement, combining data analytics, Artificial Intelligence (AI), and Information Systems to drive smarter business decisions. I specialize in transforming operational data into actionable insights that improve efficiency, reduce costs, and optimize business performance.\r\n\r\nMy experience includes delivering measurable results such as reducing logistics costs by 18% and improving delivery performance by 25% through data-driven strategies, process optimization, and technology-enabled decision-making. I have worked extensively with enterprise systems and operational workflows to support continuous improvement initiatives and business transformation.\r\n\r\nI am passionate about leveraging technology, automation, and information systems to solve complex business problems. My interests span Business Analytics, Supply Chain Intelligence, AI applications in operations, and IT-enabled process innovation.",
+      "headshot": "",
+      "email": "omoladedaniel@gmail.com",
+      "phone": "(254) 759-9559",
+      "location": "Waco, Texas",
+      "github": "https://github.com/omoladedaniel-netizen",
+      "linkedin": "https://linkedin.com/in/omolade-d-famuyide",
+      "twitter": "",
+      "resume_summary": "Skilled at leveraging Python, R, SQL, Tableau, Power BI, Excel, and ERP systems to transform data into actionable insights, reduce costs, and streamline processes. Proven ability to standardize operations, improve efficiency, and integrate technology solutions across logistics and supply chain functions.",
+      "resume_pdf": ""
+    }
+  },
+  {
+    "model": "MainApp.pagecontent",
+    "pk": 2,
+    "fields": {
+      "page": "about",
+      "section": "values",
+      "title": "What I Value",
+      "body": "I place a strong emphasis on meaningful connections and value spending quality time with friends and family, supporting both my personal well-being and professional growth.",
+      "is_active": true
+    }
+  },
+  {
+    "model": "MainApp.pagecontent",
+    "pk": 3,
+    "fields": {
+      "page": "about",
+      "section": "interests",
+      "title": "Outside of Code",
+      "body": "Outside of work, I enjoy activities that challenge strategic thinking and precision, including video strategy games, Scrabble, and billiards (pool). I also stay active through recreational pursuits like bowling.",
+      "is_active": true
+    }
+  },
+  {
+    "model": "MainApp.pagecontent",
+    "pk": 4,
+    "fields": {
+      "page": "home",
+      "section": "hero",
+      "title": "Welcome to My Portfolio",
+      "body": "I build full-stack web apps and AI-powered tools that make a difference.",
+      "is_active": true
+    }
+  },
+  {
+    "model": "MainApp.expertisecard",
+    "pk": 1,
+    "fields": {
+      "icon": "🤖",
+      "title": "AI & Automation",
+      "description": "Building intelligent agents, chatbots, and automated workflows using LangChain, Google Gemini, and n8n — turning complex processes into smooth, hands-free pipelines.",
+      "link_text": "See AI Projects →",
+      "link_url": "/projects/",
+      "order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "MainApp.expertisecard",
+    "pk": 2,
+    "fields": {
+      "icon": "🚛",
+      "title": "Logistics Operations",
+      "description": "Bridging logistics operations with modern information systems to streamline transportation, warehouse workflows, inventory visibility, and operational decision-making using data analytics, automation, enterprise systems, and process optimization.",
+      "link_text": "See Web Projects →",
+      "link_url": "/projects/",
+      "order": 2,
+      "is_active": true
+    }
+  },
+  {
+    "model": "MainApp.expertisecard",
+    "pk": 3,
+    "fields": {
+      "icon": "📊",
+      "title": "Data & Machine Learning",
+      "description": "Turning raw data into actionable insight — predictive models, data pipelines, and visualisations that help make better decisions faster.",
+      "link_text": "See Skills →",
+      "link_url": "/skills/",
+      "order": 3,
+      "is_active": true
+    }
+  },
+  {
+    "model": "MainApp.project",
+    "pk": 1,
+    "fields": {
+      "title": "Chatbot Project",
+      "slug": "ai-chatbot-platform",
+      "short_description": "An AI-powered academic assistant chatbot designed to answer course syllabus and timeline questions using trained educational documents and conversational AI.",
+      "description": "Developed an intelligent educational chatbot using Chatbase AI to help students quickly access course-related information from syllabuses and course timelines. The chatbot was trained using academic documents and configured with custom AI roles, constraints, and guardrails to provide accurate, student-friendly responses while preventing hallucinated information.",
+      "tools": "Gemini API,Chatbase Plaform,Prompt Engineering, Training Data, AI Guardrails",
+      "image": "",
+      "video": "",
+      "problem": "Students often spend unnecessary time searching through course syllabuses and timelines for assignment deadlines, policies, schedules, and course information.",
+      "solution": "Built a trained AI chatbot that uses uploaded course documents to answer student questions quickly and accurately. The system uses prompt engineering, AI role configuration, and guardrails to ensure reliable and context-focused responses.",
+      "outcome": "-Improved access to course information\r\n-Reduced time spent searching through syllabuses\r\n-Demonstrated practical AI chatbot deployment\r\n-Improved understanding of prompt engineering and AI constraints",
+      "key_features": "-AI-powered syllabus question answering\r\n-Custom-trained academic chatbot\r\n-Student-friendly conversational interface\r\n-Fallback response handling\r\n-Custom chatbot personality and tone\r\n-Website chatbot deployment support\r\n-AI guardrails and response constraints",
+      "role": "Designed, trained, configured, and tested the AI chatbot using academic course materials. Developed chatbot roles, constraints, conversational behavior, and deployment customization settings.",
+      "challenge": "Ensuring the chatbot only answered questions based on the uploaded training materials without generating inaccurate or unsupported information.",
+      "learnings": "Gained hands-on experience in conversational AI, prompt engineering, AI guardrails, chatbot training, and AI deployment for educational support systems.",
+      "github_url": "",
+      "demo_url": "https://www.chatbase.co/dashboard/omoladefamuyide1s-workspace/chatbot/t6oHYpOSZcPyYM4-Y-6s-/playground",
+      "order": 0,
+      "is_featured": true,
+      "created_at": "2026-04-28T16:35:53.202Z"
+    }
+  },
+  {
+    "model": "MainApp.project",
+    "pk": 2,
+    "fields": {
+      "title": "n8n Agent Workflow Project",
+      "slug": "ai-multi-agent-handyman-operations-system",
+      "short_description": "A Workflow automation system that streamlines customer intake, pricing, scheduling, and communication for handyman operations. system that streamlines customer intake, pricing, scheduling, and communication for handyman business operations.8n — eliminating 15+ manual hours per week.",
+      "description": "Developed a multi-agent automation platform using n8n, Gemini AI, APIs, and JavaScript to automate service business operations. The system coordinates multiple AI agents to process customer requests, generate pricing estimates, schedule appointments, and send automated communications through a centralized orchestration workflow.",
+      "tools": "n8n Cloud Automation Platform, Gemini AI, JavaScript,Google Sheets, Gmail API, JSON,",
+      "image": "",
+      "video": "",
+      "problem": "Many small service businesses still manage customer requests manually through phone calls, spreadsheets, emails, and disconnected systems. This often leads to delayed responses, scheduling conflicts, inconsistent pricing, operational inefficiencies, and poor customer communication.\r\n\r\nThe challenge becomes even greater when businesses scale operations because employees spend excessive time coordinating appointments, generating quotes, and communicating with customers instead of focusing on service delivery.\r\n\r\nThis project was designed to solve those operational bottlenecks by creating an AI-powered multi-agent workflow system that automates the entire service request lifecycle — from customer intake to pricing, scheduling, and automated communication.",
+      "solution": "Built a centralized multi-agent workflow system that automates the full service request lifecycle using AI agents, APIs, and workflow orchestration. The platform improves operational efficiency, reduces manual workload, and standardizes customer communication.",
+      "outcome": "-Reduced manual operational workload through workflow automation\r\n-Improved response speed for customer requests\r\n-Standardized pricing and communication processes\r\n-Increased operational efficiency through AI-driven automation\r\n-Demonstrated scalable multi-agent system design for small business operations\r\n-Improved customer experience with faster scheduling and automated communication",
+      "key_features": "-AI-powered customer intake processing\r\n-Automated extraction of structured job data from customer requests\r\n-Intelligent pricing estimation engine\r\n-Dynamic scheduling and appointment recommendation\r\n-Automated customer communication generation\r\n-Multi-agent workflow orchestration\r\n-Google Sheets integration for operational tracking\r\n-Gmail automation for customer and operations notifications\r\n-Real-time API communication between agents\r\n-Conditional routing and decision logic",
+      "role": "Designed and developed the complete multi-agent workflow architecture using n8n Cloud and Gemini AI. I engineered the orchestration logic that allowed multiple AI agents to communicate together within a centralized automation workflow.",
+      "challenge": "One of the biggest challenges was ensuring reliable communication between multiple AI agents while maintaining structured and valid JSON responses throughout the workflow. AI-generated responses occasionally returned improperly formatted data, which disrupted downstream automation processes.\r\n\r\nTo solve this, I implemented JSON-cleaning logic, validation handling, conditional workflow routing, and structured response enforcement mechanisms to improve system reliability and workflow stability.\r\n\r\nAnother major challenge was coordinating asynchronous workflow execution between multiple agents while ensuring accurate data transfer across intake, pricing, scheduling, and communications stages.",
+      "learnings": "Through this project, I gained hands-on experience building enterprise-style AI workflow orchestration systems using automation platforms, APIs, and multi-agent architectures. I learned how intelligent agents can collaborate to automate real-world business operations and reduce manual administrative work.",
+      "github_url": "",
+      "demo_url": "",
+      "order": 2,
+      "is_featured": true,
+      "created_at": "2026-04-28T16:35:53.222Z"
+    }
+  },
+  {
+    "model": "MainApp.project",
+    "pk": 3,
+    "fields": {
+      "title": "LangChain Agent Project",
+      "slug": "langchain-autonomous-agent",
+      "short_description": "A Python-based AI chat assistant built with LangChain and Google Gemini to handle user prompts through a simple command-line interface.",
+      "description": "Developed a beginner-friendly AI chatbot using LangChain, Google Gemini, and Python. The project connects to Gemini through an API key, loads environment variables securely, creates an AI agent, and supports both single-prompt responses and an interactive chat loop.",
+      "tools": "Python, Google Gemini API,VS Code",
+      "image": "",
+      "video": "",
+      "problem": "Many applications need simple AI assistants that can understand user questions and provide fast, professional responses through secure API-based integrations.",
+      "solution": "Built a Python chatbot that uses LangChain to create an AI agent connected to Google Gemini. The first version handles a single user prompt, while the second version supports an ongoing chat session with memory-style chat history.",
+      "outcome": "-Created a working AI chatbot prototype\r\n-Practiced secure API key management\r\n-Built both single-response and interactive chat versions\r\n-Demonstrated basic LangChain agent development",
+      "key_features": "-Gemini API integration\r\n-LangChain agent setup\r\n-Secure environment variable handling\r\n-Single-prompt chatbot version\r\n-Interactive command-line chat version\r\n-Chat history support\r\n-Exit command handling\r\n-Professional system prompt configuration",
+      "role": "Configured the Python project environment, connected LangChain with Gemini, created the AI agent, wrote the chatbot logic, implemented chat history, and tested the assistant in VS Code.",
+      "challenge": "Understanding how LangChain agents communicate with Gemini models and how to correctly manage message history across multiple user interactions.",
+      "learnings": "Gained hands-on experience with LangChain, Gemini API integration, environment variables, AI agent setup, chatbot logic, and command-line conversational AI development.",
+      "github_url": "",
+      "demo_url": "",
+      "order": 3,
+      "is_featured": true,
+      "created_at": "2026-04-28T16:35:53.241Z"
+    }
+  },
+  {
+    "model": "MainApp.project",
+    "pk": 4,
+    "fields": {
+      "title": "Google AI Studio Media Project",
+      "slug": "google-ai-studio-integration",
+      "short_description": "An AI-powered cinematic storytelling project that recreates and extends iconic video game scenes using generative AI prompts, image generation, and AI video animation workflows.",
+      "description": "Developed a cinematic AI video generation project inspired by the Mortal Kombat universe, featuring Sub-Zero and Scorpion in a dynamic volcanic battlefield environment. The project used advanced prompt engineering, scene sequencing, and generative AI workflows to recreate, extend, and alter cinematic scenes with custom storytelling and visual effects",
+      "tools": "Gemini, Nano Banana, Google Flow",
+      "image": "",
+      "video": "",
+      "problem": "Traditional cinematic content creation requires significant time, technical expertise, animation skills, and production resources, making rapid creative experimentation difficult for independent creators.",
+      "solution": "Created a multi-scene AI cinematic workflow that uses detailed prompts, AI-generated visuals, and scene transitions to recreate and extend iconic fictional battle sequences with custom story outcomes and cinematic effects.",
+      "outcome": "-Demonstrated advanced AI-assisted storytelling workflows\r\n-Created cinematic scene continuity using AI prompts\r\n-Improved understanding of generative AI video pipelines\r\n-Explored creative AI-based media production techniques",
+      "key_features": "-Scene recreation and extension\r\n-Character-based prompt engineering\r\n-Dynamic environment generation\r\n-Visual atmosphere and cinematic effects\r\n-Sequential scene animation workflows\r\n-Creative alternate ending generation",
+      "role": "Designed the cinematic concept, developed detailed AI prompts, structured scene progression, created alternate storyline sequences, and directed the visual storytelling workflow using generative AI tools.",
+      "challenge": "Maintaining cinematic consistency across multiple AI-generated scenes while preserving character continuity, environmental atmosphere, and smooth visual storytelling transitions.",
+      "learnings": "Gained hands-on experience in prompt engineering, AI-assisted storytelling, cinematic scene design, generative media workflows, and AI-driven video production techniques.",
+      "github_url": "",
+      "demo_url": "",
+      "order": 4,
+      "is_featured": true,
+      "created_at": "2026-04-28T16:35:53.260Z"
+    }
+  },
+  {
+    "model": "MainApp.project",
+    "pk": 6,
+    "fields": {
+      "title": "Campus SkillSwap",
+      "slug": "campus-skillswap",
+      "short_description": "A student-focused marketplace platform that enables users to post, discover, book, and review skills and services within a campus community.m connecting university students to share knowledge.",
+      "description": "Developed a full-stack Django web application that allows students to exchange skills and services through a centralized campus marketplace. The platform includes user authentication, skill listings, booking requests, reviews, ratings, dashboards, and AI-powered assistant integration to improve user engagement and accessibility.",
+      "tools": "Django, Python, SQLite, Bootstrap, HTML, CSS, JavaScript, GitHub Copilot, VS Code, Claude",
+      "image": "",
+      "video": "",
+      "problem": "Students often lack a centralized platform to connect with peers offering skills, tutoring, freelance services, or collaborative opportunities within campus communities.",
+      "solution": "Built a centralized campus marketplace platform where students can create profiles, post skills, search available services, request sessions, and leave reviews through an interactive and user-friendly web application.",
+      "outcome": "-Improved accessibility to student services and collaboration opportunities\r\n-Created a scalable marketplace platform architecture\r\n-Enhanced user interaction through AI assistant integration\r\n-Demonstrated full-stack Django application development",
+      "key_features": "-User registration and authentication\r\n-Skill and service marketplace\r\n-Search and category filtering\r\n-Booking and request system\r\n-Reviews and rating functionality\r\n-Personal user dashboard\r\n-Responsive Bootstrap UI\r\n-AI assistant chatbot integration\r\n-CRUD operations for skill listings",
+      "role": "Designed and developed the application architecture, database models, authentication system, dashboards, search functionality, booking workflows, and frontend interface using Django and Bootstrap.",
+      "challenge": "Designing a scalable database structure and integrating multiple features such as reviews, bookings, dashboards, and search functionality while maintaining a beginner-friendly and responsive user experience.",
+      "learnings": "Gained hands-on experience in full-stack Django development, database modeling, authentication systems, CRUD operations, responsive UI design.",
+      "github_url": "https://github.com/omoladedaniel-netizen/campus_skillswap_Omolade",
+      "demo_url": "https://campus-skillswap-omolade.onrender.com/",
+      "order": 6,
+      "is_featured": true,
+      "created_at": "2026-05-05T15:10:14.279Z"
+    }
+  },
+  {
+    "model": "MainApp.project",
+    "pk": 7,
+    "fields": {
+      "title": "Machine Learning",
+      "slug": "handwritten-digit-recognition-model",
+      "short_description": "A machine learning classification project that recognizes handwritten digits using the scikit-learn Digits dataset and a K-Nearest Neighbors (KNN) model.",
+      "description": "Developed a supervised machine learning model capable of identifying handwritten digits from image-based numerical data. The project includes image visualization, data preprocessing, model training, prediction testing, accuracy evaluation, and confusion matrix analysis to measure classification performance.",
+      "tools": "Python, scikit-learn, pandas, seaborn, matplotlib, VS Code",
+      "image": "",
+      "video": "",
+      "problem": "Organizations and digital systems often require automated recognition of handwritten numbers for tasks such as form processing, banking systems, postal services, and document digitization.",
+      "solution": "Built a KNN classification model trained on the scikit-learn Digits dataset to recognize handwritten digits based on pixel intensity values. The project evaluates prediction performance using model accuracy scores and confusion matrix visualization.",
+      "outcome": "-Successfully classified handwritten digits with high prediction accuracy\r\n-Visualized model performance using a confusion matrix\r\n-Identified and analyzed classification errors\r\n-Demonstrated practical image-based machine learning classification",
+      "key_features": "-Handwritten digit image classification\r\n-K-Nearest Neighbors model\r\n-Data visualization of digit images\r\n-Train-test data splitting\r\n-Prediction accuracy evaluation\r\n-Confusion matrix heatmap visualization\r\n-Misclassification analysis",
+      "role": "Developed the Python machine learning workflow, visualized digit image datasets, trained and tested the KNN model, evaluated prediction performance, and generated confusion matrix visualizations.",
+      "challenge": "Understanding how image pixel data is transformed into numerical features for machine learning classification and interpreting model misclassifications between visually similar digits.",
+      "learnings": "Gained hands-on experience in image classification, supervised learning, KNN modeling, machine learning evaluation techniques, confusion matrix analysis, and data visualization in Python.",
+      "github_url": "",
+      "demo_url": "",
+      "order": 1,
+      "is_featured": true,
+      "created_at": "2026-05-08T01:31:59.146Z"
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 1,
+    "fields": {
+      "name": "Python",
+      "category": "languages",
+      "proficiency": 3,
+      "order": 3
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 3,
+    "fields": {
+      "name": "HTML & CSS",
+      "category": "languages",
+      "proficiency": 3,
+      "order": 3
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 4,
+    "fields": {
+      "name": "SQL",
+      "category": "languages",
+      "proficiency": 3,
+      "order": 4
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 7,
+    "fields": {
+      "name": "Django",
+      "category": "frameworks",
+      "proficiency": 3,
+      "order": 1
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 10,
+    "fields": {
+      "name": "LangChain",
+      "category": "frameworks",
+      "proficiency": 3,
+      "order": 4
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 13,
+    "fields": {
+      "name": "Google Gemini / AI Studio",
+      "category": "ai_ml",
+      "proficiency": 3,
+      "order": 2
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 17,
+    "fields": {
+      "name": "Prompt Engineering",
+      "category": "ai_ml",
+      "proficiency": 4,
+      "order": 6
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 18,
+    "fields": {
+      "name": "Git & GitHub",
+      "category": "tools",
+      "proficiency": 3,
+      "order": 4
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 20,
+    "fields": {
+      "name": "n8n",
+      "category": "tools",
+      "proficiency": 4,
+      "order": 4
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 21,
+    "fields": {
+      "name": "VS Code",
+      "category": "tools",
+      "proficiency": 4,
+      "order": 4
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 28,
+    "fields": {
+      "name": "Problem Solving",
+      "category": "soft_skills",
+      "proficiency": 5,
+      "order": 3
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 30,
+    "fields": {
+      "name": "Communication",
+      "category": "soft_skills",
+      "proficiency": 4,
+      "order": 3
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 37,
+    "fields": {
+      "name": "LangChain Agents",
+      "category": "ai_ml",
+      "proficiency": 3,
+      "order": 3
+    }
+  },
+  {
+    "model": "MainApp.skill",
+    "pk": 45,
+    "fields": {
+      "name": "Technical Writing",
+      "category": "soft_skills",
+      "proficiency": 3,
+      "order": 2
+    }
+  },
+  {
+    "model": "MainApp.resumesection",
+    "pk": 1,
+    "fields": {
+      "type": "education",
+      "title": "Bachelor of Science in Industrial Relations",
+      "organization": "Osun State University",
+      "location": "Osogbo, Nigeria",
+      "start_date": "Nov 2014",
+      "end_date": "Sep 2018",
+      "description": "Graduated with Major in  Personnel Management and Industrial Relations",
+      "bullet_points": "",
+      "order": 1
+    }
+  },
+  {
+    "model": "MainApp.resumesection",
+    "pk": 2,
+    "fields": {
+      "type": "achievement",
+      "title": "Member",
+      "organization": "Chartered Institue of Logistics and Transport",
+      "location": "Nigeria",
+      "start_date": "Jan 2023",
+      "end_date": "",
+      "description": "",
+      "bullet_points": "",
+      "order": 2
+    }
+  },
+  {
+    "model": "MainApp.resumesection",
+    "pk": 7,
+    "fields": {
+      "type": "certification",
+      "title": "Primavera p6",
+      "organization": "Udemy",
+      "location": "",
+      "start_date": "2025",
+      "end_date": "",
+      "description": "Project Planning and Scheduling",
+      "bullet_points": "",
+      "order": 3
+    }
+  },
+  {
+    "model": "MainApp.resumesection",
+    "pk": 18,
+    "fields": {
+      "type": "education",
+      "title": "Masters in Information Systems",
+      "organization": "Baylor University",
+      "location": "Waco, Texas",
+      "start_date": "Jun 2024",
+      "end_date": "May 2026",
+      "description": "With Concentration in Business Analytics",
+      "bullet_points": "",
+      "order": 0
+    }
+  },
+  {
+    "model": "MainApp.resumesection",
+    "pk": 19,
+    "fields": {
+      "type": "experience",
+      "title": "Assistant Manager, Logistics Operations",
+      "organization": "Flour Mills of Nigeria PLC",
+      "location": "Lagos, Nigeria",
+      "start_date": "Feb 2022",
+      "end_date": "Jul 2024",
+      "description": "In charge of Logistics operation strategy",
+      "bullet_points": "Reduced logistics costs by ₦216M (18%) annually through optimized routing and fleet planning\r\nExecuted Project Laminar, cutting transport delays by 25% across nationwide distribution\r\nDeveloped performance dashboards and schedules that lowered supply chain disruptions by 20%\r\nDeveloped and proposed a standardized freight card, improving vendor accountability, compliance, and cost transparency\r\nCollaborated with cross-functional teams to integrate ERP and analytics solutions, enhancing decision making visibility",
+      "order": 1
+    }
+  },
+  {
+    "model": "MainApp.resumesection",
+    "pk": 20,
+    "fields": {
+      "type": "experience",
+      "title": "Journey Officer",
+      "organization": "Abdlas Logistics Nigeria Limited",
+      "location": "Ogun, Nigeria",
+      "start_date": "Jun 2020",
+      "end_date": "Feb 2022",
+      "description": "In charge of Driver Journey Management Plan",
+      "bullet_points": "Designed a truck efficiency model that reduced delivery time and improved journey management, decreasing truck diversion by 30%\r\nManaged tracking and logistical accuracy across the delivery lifecycle, utilizing project management skills to improve operational efficiency\r\nEffectively prioritized team tasks, achieving consistent on-time delivery while optimizing resource use",
+      "order": 2
+    }
+  },
+  {
+    "model": "MainApp.resumesection",
+    "pk": 21,
+    "fields": {
+      "type": "experience",
+      "title": "Student Associate",
+      "organization": "Baylor University",
+      "location": "Waco, Texas",
+      "start_date": "Jan 2025",
+      "end_date": "May 2026",
+      "description": "Helping International Students navigate US Academy",
+      "bullet_points": "Promote Study Abroad and International Student & Scholar Services (ISSS) programs at campus events, increasing student awareness of global engagement opportunities\r\nCoordinate CGE processes and campus events, supporting program logistics and ensuring smooth execution of international student initiatives\r\nMentor and support international and study abroad students, assisting with cultural adjustment and navigation of university resources\r\nProvide front desk and administrative operations support, managing calls, emails, documentation, and communication with students and staff\r\nGuide students through arrival procedures, study abroad applications, and course preapproval processes, improving clarity and accessibility of CGE services",
+      "order": 0
+    }
   }
-},
-{
-  "model": "MainApp.pagecontent",
-  "pk": 2,
-  "fields": {
-    "page": "about",
-    "section": "values",
-    "title": "What I Value",
-    "body": "I place a strong emphasis on meaningful connections and value spending quality time with friends and family, supporting both my personal well-being and professional growth.",
-    "is_active": true
-  }
-},
-{
-  "model": "MainApp.pagecontent",
-  "pk": 3,
-  "fields": {
-    "page": "about",
-    "section": "interests",
-    "title": "Outside of Code",
-    "body": "Outside of work, I enjoy activities that challenge strategic thinking and precision, including video strategy games, Scrabble, and billiards (pool). I also stay active through recreational pursuits like bowling.",
-    "is_active": true
-  }
-},
-{
-  "model": "MainApp.pagecontent",
-  "pk": 4,
-  "fields": {
-    "page": "home",
-    "section": "hero",
-    "title": "Welcome to My Portfolio",
-    "body": "I build full-stack web apps and AI-powered tools that make a difference.",
-    "is_active": true
-  }
-},
-{
-  "model": "MainApp.expertisecard",
-  "pk": 1,
-  "fields": {
-    "icon": "🤖",
-    "title": "AI & Automation",
-    "description": "Building intelligent agents, chatbots, and automated workflows using LangChain, Google Gemini, and n8n — turning complex processes into smooth, hands-free pipelines.",
-    "link_text": "See AI Projects →",
-    "link_url": "/projects/",
-    "order": 1,
-    "is_active": true
-  }
-},
-{
-  "model": "MainApp.expertisecard",
-  "pk": 2,
-  "fields": {
-    "icon": "🚛",
-    "title": "Logistics Operations",
-    "description": "Bridging logistics operations with modern information systems to streamline transportation, warehouse workflows, inventory visibility, and operational decision-making using data analytics, automation, enterprise systems, and process optimization.",
-    "link_text": "See Web Projects →",
-    "link_url": "/projects/",
-    "order": 2,
-    "is_active": true
-  }
-},
-{
-  "model": "MainApp.expertisecard",
-  "pk": 3,
-  "fields": {
-    "icon": "📊",
-    "title": "Data & Machine Learning",
-    "description": "Turning raw data into actionable insight — predictive models, data pipelines, and visualisations that help make better decisions faster.",
-    "link_text": "See Skills →",
-    "link_url": "/skills/",
-    "order": 3,
-    "is_active": true
-  }
-},
-{
-  "model": "MainApp.project",
-  "pk": 1,
-  "fields": {
-    "title": "Chatbot Project",
-    "slug": "ai-chatbot-platform",
-    "short_description": "An AI-powered academic assistant chatbot designed to answer course syllabus and timeline questions using trained educational documents and conversational AI.",
-    "description": "Developed an intelligent educational chatbot using Chatbase AI to help students quickly access course-related information from syllabuses and course timelines. The chatbot was trained using academic documents and configured with custom AI roles, constraints, and guardrails to provide accurate, student-friendly responses while preventing hallucinated information.",
-    "tools": "Gemini API,Chatbase Plaform,Prompt Engineering, Training Data, AI Guardrails",
-    "image": "",
-    "video": "",
-    "problem": "Students often spend unnecessary time searching through course syllabuses and timelines for assignment deadlines, policies, schedules, and course information.",
-    "solution": "Built a trained AI chatbot that uses uploaded course documents to answer student questions quickly and accurately. The system uses prompt engineering, AI role configuration, and guardrails to ensure reliable and context-focused responses.",
-    "outcome": "-Improved access to course information\r\n-Reduced time spent searching through syllabuses\r\n-Demonstrated practical AI chatbot deployment\r\n-Improved understanding of prompt engineering and AI constraints",
-    "key_features": "-AI-powered syllabus question answering\r\n-Custom-trained academic chatbot\r\n-Student-friendly conversational interface\r\n-Fallback response handling\r\n-Custom chatbot personality and tone\r\n-Website chatbot deployment support\r\n-AI guardrails and response constraints",
-    "role": "Designed, trained, configured, and tested the AI chatbot using academic course materials. Developed chatbot roles, constraints, conversational behavior, and deployment customization settings.",
-    "challenge": "Ensuring the chatbot only answered questions based on the uploaded training materials without generating inaccurate or unsupported information.",
-    "learnings": "Gained hands-on experience in conversational AI, prompt engineering, AI guardrails, chatbot training, and AI deployment for educational support systems.",
-    "github_url": "",
-    "demo_url": "https://www.chatbase.co/dashboard/omoladefamuyide1s-workspace/chatbot/t6oHYpOSZcPyYM4-Y-6s-/playground",
-    "order": 0,
-    "is_featured": true,
-    "created_at": "2026-04-28T16:35:53.202Z"
-  }
-},
-{
-  "model": "MainApp.project",
-  "pk": 2,
-  "fields": {
-    "title": "n8n Agent Workflow Project",
-    "slug": "ai-multi-agent-handyman-operations-system",
-    "short_description": "A Workflow automation system that streamlines customer intake, pricing, scheduling, and communication for handyman operations. system that streamlines customer intake, pricing, scheduling, and communication for handyman business operations.8n — eliminating 15+ manual hours per week.",
-    "description": "Developed a multi-agent automation platform using n8n, Gemini AI, APIs, and JavaScript to automate service business operations. The system coordinates multiple AI agents to process customer requests, generate pricing estimates, schedule appointments, and send automated communications through a centralized orchestration workflow.",
-    "tools": "n8n Cloud Automation Platform, Gemini AI, JavaScript,Google Sheets, Gmail API, JSON,",
-    "image": "",
-    "video": "",
-    "problem": "Many small service businesses still manage customer requests manually through phone calls, spreadsheets, emails, and disconnected systems. This often leads to delayed responses, scheduling conflicts, inconsistent pricing, operational inefficiencies, and poor customer communication.\r\n\r\nThe challenge becomes even greater when businesses scale operations because employees spend excessive time coordinating appointments, generating quotes, and communicating with customers instead of focusing on service delivery.\r\n\r\nThis project was designed to solve those operational bottlenecks by creating an AI-powered multi-agent workflow system that automates the entire service request lifecycle — from customer intake to pricing, scheduling, and automated communication.",
-    "solution": "Built a centralized multi-agent workflow system that automates the full service request lifecycle using AI agents, APIs, and workflow orchestration. The platform improves operational efficiency, reduces manual workload, and standardizes customer communication.",
-    "outcome": "-Reduced manual operational workload through workflow automation\r\n-Improved response speed for customer requests\r\n-Standardized pricing and communication processes\r\n-Increased operational efficiency through AI-driven automation\r\n-Demonstrated scalable multi-agent system design for small business operations\r\n-Improved customer experience with faster scheduling and automated communication",
-    "key_features": "-AI-powered customer intake processing\r\n-Automated extraction of structured job data from customer requests\r\n-Intelligent pricing estimation engine\r\n-Dynamic scheduling and appointment recommendation\r\n-Automated customer communication generation\r\n-Multi-agent workflow orchestration\r\n-Google Sheets integration for operational tracking\r\n-Gmail automation for customer and operations notifications\r\n-Real-time API communication between agents\r\n-Conditional routing and decision logic",
-    "role": "Designed and developed the complete multi-agent workflow architecture using n8n Cloud and Gemini AI. I engineered the orchestration logic that allowed multiple AI agents to communicate together within a centralized automation workflow.",
-    "challenge": "One of the biggest challenges was ensuring reliable communication between multiple AI agents while maintaining structured and valid JSON responses throughout the workflow. AI-generated responses occasionally returned improperly formatted data, which disrupted downstream automation processes.\r\n\r\nTo solve this, I implemented JSON-cleaning logic, validation handling, conditional workflow routing, and structured response enforcement mechanisms to improve system reliability and workflow stability.\r\n\r\nAnother major challenge was coordinating asynchronous workflow execution between multiple agents while ensuring accurate data transfer across intake, pricing, scheduling, and communications stages.",
-    "learnings": "Through this project, I gained hands-on experience building enterprise-style AI workflow orchestration systems using automation platforms, APIs, and multi-agent architectures. I learned how intelligent agents can collaborate to automate real-world business operations and reduce manual administrative work.",
-    "github_url": "",
-    "demo_url": "",
-    "order": 2,
-    "is_featured": true,
-    "created_at": "2026-04-28T16:35:53.222Z"
-  }
-},
-{
-  "model": "MainApp.project",
-  "pk": 3,
-  "fields": {
-    "title": "LangChain Agent Project",
-    "slug": "langchain-autonomous-agent",
-    "short_description": "A Python-based AI chat assistant built with LangChain and Google Gemini to handle user prompts through a simple command-line interface.",
-    "description": "Developed a beginner-friendly AI chatbot using LangChain, Google Gemini, and Python. The project connects to Gemini through an API key, loads environment variables securely, creates an AI agent, and supports both single-prompt responses and an interactive chat loop.",
-    "tools": "Python, Google Gemini API,VS Code",
-    "image": "",
-    "video": "",
-    "problem": "Many applications need simple AI assistants that can understand user questions and provide fast, professional responses through secure API-based integrations.",
-    "solution": "Built a Python chatbot that uses LangChain to create an AI agent connected to Google Gemini. The first version handles a single user prompt, while the second version supports an ongoing chat session with memory-style chat history.",
-    "outcome": "-Created a working AI chatbot prototype\r\n-Practiced secure API key management\r\n-Built both single-response and interactive chat versions\r\n-Demonstrated basic LangChain agent development",
-    "key_features": "-Gemini API integration\r\n-LangChain agent setup\r\n-Secure environment variable handling\r\n-Single-prompt chatbot version\r\n-Interactive command-line chat version\r\n-Chat history support\r\n-Exit command handling\r\n-Professional system prompt configuration",
-    "role": "Configured the Python project environment, connected LangChain with Gemini, created the AI agent, wrote the chatbot logic, implemented chat history, and tested the assistant in VS Code.",
-    "challenge": "Understanding how LangChain agents communicate with Gemini models and how to correctly manage message history across multiple user interactions.",
-    "learnings": "Gained hands-on experience with LangChain, Gemini API integration, environment variables, AI agent setup, chatbot logic, and command-line conversational AI development.",
-    "github_url": "",
-    "demo_url": "",
-    "order": 3,
-    "is_featured": true,
-    "created_at": "2026-04-28T16:35:53.241Z"
-  }
-},
-{
-  "model": "MainApp.project",
-  "pk": 4,
-  "fields": {
-    "title": "Google AI Studio Media Project",
-    "slug": "google-ai-studio-integration",
-    "short_description": "An AI-powered cinematic storytelling project that recreates and extends iconic video game scenes using generative AI prompts, image generation, and AI video animation workflows.",
-    "description": "Developed a cinematic AI video generation project inspired by the Mortal Kombat universe, featuring Sub-Zero and Scorpion in a dynamic volcanic battlefield environment. The project used advanced prompt engineering, scene sequencing, and generative AI workflows to recreate, extend, and alter cinematic scenes with custom storytelling and visual effects",
-    "tools": "Gemini, Nano Banana, Google Flow",
-    "image": "",
-    "video": "",
-    "problem": "Traditional cinematic content creation requires significant time, technical expertise, animation skills, and production resources, making rapid creative experimentation difficult for independent creators.",
-    "solution": "Created a multi-scene AI cinematic workflow that uses detailed prompts, AI-generated visuals, and scene transitions to recreate and extend iconic fictional battle sequences with custom story outcomes and cinematic effects.",
-    "outcome": "-Demonstrated advanced AI-assisted storytelling workflows\r\n-Created cinematic scene continuity using AI prompts\r\n-Improved understanding of generative AI video pipelines\r\n-Explored creative AI-based media production techniques",
-    "key_features": "-Scene recreation and extension\r\n-Character-based prompt engineering\r\n-Dynamic environment generation\r\n-Visual atmosphere and cinematic effects\r\n-Sequential scene animation workflows\r\n-Creative alternate ending generation",
-    "role": "Designed the cinematic concept, developed detailed AI prompts, structured scene progression, created alternate storyline sequences, and directed the visual storytelling workflow using generative AI tools.",
-    "challenge": "Maintaining cinematic consistency across multiple AI-generated scenes while preserving character continuity, environmental atmosphere, and smooth visual storytelling transitions.",
-    "learnings": "Gained hands-on experience in prompt engineering, AI-assisted storytelling, cinematic scene design, generative media workflows, and AI-driven video production techniques.",
-    "github_url": "",
-    "demo_url": "",
-    "order": 4,
-    "is_featured": true,
-    "created_at": "2026-04-28T16:35:53.260Z"
-  }
-},
-{
-  "model": "MainApp.project",
-  "pk": 6,
-  "fields": {
-    "title": "Campus SkillSwap",
-    "slug": "campus-skillswap",
-    "short_description": "A student-focused marketplace platform that enables users to post, discover, book, and review skills and services within a campus community.m connecting university students to share knowledge.",
-    "description": "Developed a full-stack Django web application that allows students to exchange skills and services through a centralized campus marketplace. The platform includes user authentication, skill listings, booking requests, reviews, ratings, dashboards, and AI-powered assistant integration to improve user engagement and accessibility.",
-    "tools": "Django, Python, SQLite, Bootstrap, HTML, CSS, JavaScript, GitHub Copilot, VS Code, Claude",
-    "image": "",
-    "video": "",
-    "problem": "Students often lack a centralized platform to connect with peers offering skills, tutoring, freelance services, or collaborative opportunities within campus communities.",
-    "solution": "Built a centralized campus marketplace platform where students can create profiles, post skills, search available services, request sessions, and leave reviews through an interactive and user-friendly web application.",
-    "outcome": "-Improved accessibility to student services and collaboration opportunities\r\n-Created a scalable marketplace platform architecture\r\n-Enhanced user interaction through AI assistant integration\r\n-Demonstrated full-stack Django application development",
-    "key_features": "-User registration and authentication\r\n-Skill and service marketplace\r\n-Search and category filtering\r\n-Booking and request system\r\n-Reviews and rating functionality\r\n-Personal user dashboard\r\n-Responsive Bootstrap UI\r\n-AI assistant chatbot integration\r\n-CRUD operations for skill listings",
-    "role": "Designed and developed the application architecture, database models, authentication system, dashboards, search functionality, booking workflows, and frontend interface using Django and Bootstrap.",
-    "challenge": "Designing a scalable database structure and integrating multiple features such as reviews, bookings, dashboards, and search functionality while maintaining a beginner-friendly and responsive user experience.",
-    "learnings": "Gained hands-on experience in full-stack Django development, database modeling, authentication systems, CRUD operations, responsive UI design.",
-    "github_url": "https://github.com/omoladedaniel-netizen/campus_skillswap_Omolade",
-    "demo_url": "https://campus-skillswap-omolade.onrender.com/",
-    "order": 6,
-    "is_featured": true,
-    "created_at": "2026-05-05T15:10:14.279Z"
-  }
-},
-{
-  "model": "MainApp.project",
-  "pk": 7,
-  "fields": {
-    "title": "Machine Learning",
-    "slug": "handwritten-digit-recognition-model",
-    "short_description": "A machine learning classification project that recognizes handwritten digits using the scikit-learn Digits dataset and a K-Nearest Neighbors (KNN) model.",
-    "description": "Developed a supervised machine learning model capable of identifying handwritten digits from image-based numerical data. The project includes image visualization, data preprocessing, model training, prediction testing, accuracy evaluation, and confusion matrix analysis to measure classification performance.",
-    "tools": "Python, scikit-learn, pandas, seaborn, matplotlib, VS Code",
-    "image": "",
-    "video": "",
-    "problem": "Organizations and digital systems often require automated recognition of handwritten numbers for tasks such as form processing, banking systems, postal services, and document digitization.",
-    "solution": "Built a KNN classification model trained on the scikit-learn Digits dataset to recognize handwritten digits based on pixel intensity values. The project evaluates prediction performance using model accuracy scores and confusion matrix visualization.",
-    "outcome": "-Successfully classified handwritten digits with high prediction accuracy\r\n-Visualized model performance using a confusion matrix\r\n-Identified and analyzed classification errors\r\n-Demonstrated practical image-based machine learning classification",
-    "key_features": "-Handwritten digit image classification\r\n-K-Nearest Neighbors model\r\n-Data visualization of digit images\r\n-Train-test data splitting\r\n-Prediction accuracy evaluation\r\n-Confusion matrix heatmap visualization\r\n-Misclassification analysis",
-    "role": "Developed the Python machine learning workflow, visualized digit image datasets, trained and tested the KNN model, evaluated prediction performance, and generated confusion matrix visualizations.",
-    "challenge": "Understanding how image pixel data is transformed into numerical features for machine learning classification and interpreting model misclassifications between visually similar digits.",
-    "learnings": "Gained hands-on experience in image classification, supervised learning, KNN modeling, machine learning evaluation techniques, confusion matrix analysis, and data visualization in Python.",
-    "github_url": "",
-    "demo_url": "",
-    "order": 1,
-    "is_featured": true,
-    "created_at": "2026-05-08T01:31:59.146Z"
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 1,
-  "fields": {
-    "name": "Python",
-    "category": "languages",
-    "proficiency": 3,
-    "order": 3
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 3,
-  "fields": {
-    "name": "HTML & CSS",
-    "category": "languages",
-    "proficiency": 3,
-    "order": 3
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 4,
-  "fields": {
-    "name": "SQL",
-    "category": "languages",
-    "proficiency": 3,
-    "order": 4
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 7,
-  "fields": {
-    "name": "Django",
-    "category": "frameworks",
-    "proficiency": 3,
-    "order": 1
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 10,
-  "fields": {
-    "name": "LangChain",
-    "category": "frameworks",
-    "proficiency": 3,
-    "order": 4
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 13,
-  "fields": {
-    "name": "Google Gemini / AI Studio",
-    "category": "ai_ml",
-    "proficiency": 3,
-    "order": 2
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 17,
-  "fields": {
-    "name": "Prompt Engineering",
-    "category": "ai_ml",
-    "proficiency": 4,
-    "order": 6
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 18,
-  "fields": {
-    "name": "Git & GitHub",
-    "category": "tools",
-    "proficiency": 3,
-    "order": 4
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 20,
-  "fields": {
-    "name": "n8n",
-    "category": "tools",
-    "proficiency": 4,
-    "order": 4
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 21,
-  "fields": {
-    "name": "VS Code",
-    "category": "tools",
-    "proficiency": 4,
-    "order": 4
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 28,
-  "fields": {
-    "name": "Problem Solving",
-    "category": "soft_skills",
-    "proficiency": 5,
-    "order": 3
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 30,
-  "fields": {
-    "name": "Communication",
-    "category": "soft_skills",
-    "proficiency": 4,
-    "order": 3
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 37,
-  "fields": {
-    "name": "LangChain Agents",
-    "category": "ai_ml",
-    "proficiency": 3,
-    "order": 3
-  }
-},
-{
-  "model": "MainApp.skill",
-  "pk": 45,
-  "fields": {
-    "name": "Technical Writing",
-    "category": "soft_skills",
-    "proficiency": 3,
-    "order": 2
-  }
-},
-{
-  "model": "MainApp.resumesection",
-  "pk": 1,
-  "fields": {
-    "type": "education",
-    "title": "Bachelor of Science in Industrial Relations",
-    "organization": "Osun State University",
-    "location": "Osogbo, Nigeria",
-    "start_date": "Nov 2014",
-    "end_date": "Sep 2018",
-    "description": "Graduated with Major in  Personnel Management and Industrial Relations",
-    "bullet_points": "",
-    "order": 1
-  }
-},
-{
-  "model": "MainApp.resumesection",
-  "pk": 2,
-  "fields": {
-    "type": "achievement",
-    "title": "Member",
-    "organization": "Chartered Institue of Logistics and Transport",
-    "location": "Nigeria",
-    "start_date": "Jan 2023",
-    "end_date": "",
-    "description": "",
-    "bullet_points": "",
-    "order": 2
-  }
-},
-{
-  "model": "MainApp.resumesection",
-  "pk": 7,
-  "fields": {
-    "type": "certification",
-    "title": "Primavera p6",
-    "organization": "Udemy",
-    "location": "",
-    "start_date": "2025",
-    "end_date": "",
-    "description": "Project Planning and Scheduling",
-    "bullet_points": "",
-    "order": 3
-  }
-},
-{
-  "model": "MainApp.resumesection",
-  "pk": 18,
-  "fields": {
-    "type": "education",
-    "title": "Masters in Information Systems",
-    "organization": "Baylor University",
-    "location": "Waco, Texas",
-    "start_date": "Jun 2024",
-    "end_date": "May 2026",
-    "description": "With Concentration in Business Analytics",
-    "bullet_points": "",
-    "order": 0
-  }
-},
-{
-  "model": "MainApp.resumesection",
-  "pk": 19,
-  "fields": {
-    "type": "experience",
-    "title": "Assistant Manager, Logistics Operations",
-    "organization": "Flour Mills of Nigeria PLC",
-    "location": "Lagos, Nigeria",
-    "start_date": "Feb 2022",
-    "end_date": "Jul 2024",
-    "description": "In charge of Logistics operation strategy",
-    "bullet_points": "Reduced logistics costs by ₦216M (18%) annually through optimized routing and fleet planning\r\nExecuted Project Laminar, cutting transport delays by 25% across nationwide distribution\r\nDeveloped performance dashboards and schedules that lowered supply chain disruptions by 20%\r\nDeveloped and proposed a standardized freight card, improving vendor accountability, compliance, and cost transparency\r\nCollaborated with cross-functional teams to integrate ERP and analytics solutions, enhancing decision making visibility",
-    "order": 1
-  }
-},
-{
-  "model": "MainApp.resumesection",
-  "pk": 20,
-  "fields": {
-    "type": "experience",
-    "title": "Journey Officer",
-    "organization": "Abdlas Logistics Nigeria Limited",
-    "location": "Ogun, Nigeria",
-    "start_date": "Jun 2020",
-    "end_date": "Feb 2022",
-    "description": "In charge of Driver Journey Management Plan",
-    "bullet_points": "Designed a truck efficiency model that reduced delivery time and improved journey management, decreasing truck diversion by 30%\r\nManaged tracking and logistical accuracy across the delivery lifecycle, utilizing project management skills to improve operational efficiency\r\nEffectively prioritized team tasks, achieving consistent on-time delivery while optimizing resource use",
-    "order": 2
-  }
-},
-{
-  "model": "MainApp.resumesection",
-  "pk": 21,
-  "fields": {
-    "type": "experience",
-    "title": "Student Associate",
-    "organization": "Baylor University",
-    "location": "Waco, Texas",
-    "start_date": "Jan 2025",
-    "end_date": "May 2026",
-    "description": "Helping International Students navigate US Academy",
-    "bullet_points": "Promote Study Abroad and International Student & Scholar Services (ISSS) programs at campus events, increasing student awareness of global engagement opportunities\r\nCoordinate CGE processes and campus events, supporting program logistics and ensuring smooth execution of international student initiatives\r\nMentor and support international and study abroad students, assisting with cultural adjustment and navigation of university resources\r\nProvide front desk and administrative operations support, managing calls, emails, documentation, and communication with students and staff\r\nGuide students through arrival procedures, study abroad applications, and course preapproval processes, improving clarity and accessibility of CGE services",
-    "order": 0
-  }
-}
 ]
