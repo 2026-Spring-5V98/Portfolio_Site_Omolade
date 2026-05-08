@@ -21,8 +21,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'cloudinary',
     'MainApp',
 ]
 
@@ -82,6 +80,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL', '')
+USE_CLOUDINARY = CLOUDINARY_URL.startswith('cloudinary://')
+
+if USE_CLOUDINARY:
+    INSTALLED_APPS += ['cloudinary_storage', 'cloudinary']
 
 STORAGES = {
     'staticfiles': {
@@ -90,7 +92,7 @@ STORAGES = {
     'default': {
         'BACKEND': (
             'cloudinary_storage.storage.MediaCloudinaryStorage'
-            if CLOUDINARY_URL else
+            if USE_CLOUDINARY else
             'django.core.files.storage.FileSystemStorage'
         ),
     },
