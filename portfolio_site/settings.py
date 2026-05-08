@@ -111,17 +111,27 @@ if not DEBUG:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email
-GMAIL_ADDRESS       = os.environ.get('GMAIL_ADDRESS', '')
-GMAIL_APP_PASS      = os.environ.get('GMAIL_APP_PASS', '')
-EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST          = 'smtp.gmail.com'
-EMAIL_PORT          = 587
-EMAIL_USE_TLS       = True
-EMAIL_HOST_USER     = GMAIL_ADDRESS
-EMAIL_HOST_PASSWORD = GMAIL_APP_PASS
-EMAIL_TIMEOUT       = 10
-DEFAULT_FROM_EMAIL  = GMAIL_ADDRESS or 'noreply@portfolio.com'
-ADMIN_EMAIL         = 'omoladedaniel@gmail.com'
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
+GMAIL_ADDRESS  = os.environ.get('GMAIL_ADDRESS', '')
+GMAIL_APP_PASS = os.environ.get('GMAIL_APP_PASS', '')
+
+if RESEND_API_KEY:
+    # Production: use Resend HTTP API (works on Render free tier)
+    EMAIL_BACKEND = 'anymail.backends.resend.EmailBackend'
+    ANYMAIL = {'RESEND_API_KEY': RESEND_API_KEY}
+    DEFAULT_FROM_EMAIL = 'Portfolio <onboarding@resend.dev>'
+else:
+    # Local dev: use Gmail SMTP
+    EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST          = 'smtp.gmail.com'
+    EMAIL_PORT          = 587
+    EMAIL_USE_TLS       = True
+    EMAIL_HOST_USER     = GMAIL_ADDRESS
+    EMAIL_HOST_PASSWORD = GMAIL_APP_PASS
+    EMAIL_TIMEOUT       = 10
+    DEFAULT_FROM_EMAIL  = GMAIL_ADDRESS or 'noreply@portfolio.com'
+
+ADMIN_EMAIL = 'omoladedaniel@gmail.com'
 
 # Gemini
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '')
