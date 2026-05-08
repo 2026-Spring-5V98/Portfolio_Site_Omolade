@@ -1,0 +1,90 @@
+{% extends 'MainApp/base.html' %}
+{% load static %}
+
+{% block title %}Skills{% endblock %}
+{% block meta_description %}Technical skills and expertise of {{ profile.name }} across programming, AI/ML, and tools.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <span class="section-tag">Expertise</span>
+      <h1 class="page-title">Skills &amp; Technologies</h1>
+      <p class="page-subtitle">My technical toolkit — grouped by domain with proficiency levels.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if categories %}
+    {% for category, skill_list in categories.items %}
+    <div class="skill-category reveal">
+      <h2 class="skill-cat-title">{{ category }}</h2>
+      <div class="skills-list">
+        {% for skill in skill_list %}
+        <div class="skill-row">
+          <div class="skill-label">
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-level-label">
+              {% if skill.proficiency == 5 %}Expert
+              {% elif skill.proficiency == 4 %}Advanced
+              {% elif skill.proficiency == 3 %}Proficient
+              {% elif skill.proficiency == 2 %}Familiar
+              {% else %}Learning{% endif %}
+            </span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="{{ skill.proficiency_percent }}"></div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p class="empty-state">Skills are being added — check back soon!</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">All Skills at a Glance</h2>
+    </div>
+    <div class="skills-cloud reveal">
+      {% for category, skill_list in categories.items %}
+      {% for skill in skill_list %}
+      <span class="skill-chip skill-level-{{ skill.proficiency }}">{{ skill.name }}</span>
+      {% endfor %}
+      {% endfor %}
+    </div>
+    <div class="skill-legend reveal">
+      <span class="skill-chip skill-level-5">Expert</span>
+      <span class="skill-chip skill-level-4">Advanced</span>
+      <span class="skill-chip skill-level-3">Proficient</span>
+      <span class="skill-chip skill-level-2">Familiar</span>
+      <span class="skill-chip skill-level-1">Learning</span>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  document.querySelectorAll('.skill-bar').forEach(function(bar) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          bar.style.width = bar.dataset.width + '%';
+          observer.unobserve(bar);
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(bar);
+  });
+</script>
+{% endblock %}

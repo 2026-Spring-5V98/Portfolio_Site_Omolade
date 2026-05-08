@@ -1,0 +1,285 @@
+{% extends 'MainApp/base.html' %}
+{% load static %}
+
+{% block title %}{{ project.title }}{% endblock %}
+{% block meta_description %}{{ project.short_description }}{% endblock %}
+
+{% block content %}
+
+<!-- Project Hero -->
+<section class="project-detail-hero">
+  {% if project.image %}
+  <div class="project-detail-img-wrap">
+    <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-detail-img">
+    <div class="project-detail-img-overlay"></div>
+  </div>
+  {% elif project.video %}
+  <div class="project-detail-video-wrap">
+    <video class="project-detail-video" controls preload="metadata">
+      <source src="{{ project.video.url }}" type="video/mp4">
+    </video>
+  </div>
+  {% endif %}
+  <div class="container project-detail-hero-inner reveal">
+    <a href="{% url 'projects' %}" class="back-link">← Back to Projects</a>
+    <h1 class="project-detail-title">{{ project.title }}</h1>
+    <p class="project-detail-sub">{{ project.short_description }}</p>
+    <div class="project-tools mt-2">
+      {% for tool in project.get_tools_list %}
+      <span class="tag tag-lg">{{ tool }}</span>
+      {% endfor %}
+    </div>
+    <div class="project-detail-links">
+      {% if project.github_url %}
+      <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+      {% endif %}
+      {% if project.demo_url %}
+      <a href="{{ project.demo_url }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+        🔗 Live Demo
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Project Content -->
+<section class="section">
+  <div class="container project-detail-content">
+
+    <div class="project-detail-main">
+
+      <!-- 2. One-Sentence Summary -->
+      {% if project.description %}
+      <div class="detail-block reveal">
+        <div class="detail-icon-label">
+          <span class="detail-icon">📋</span>
+          <h2>Overview</h2>
+        </div>
+        <div class="detail-text">{{ project.description|linebreaks }}</div>
+      </div>
+      {% endif %}
+
+      <!-- 3. Business Problem -->
+      {% if project.problem %}
+      <div class="detail-block reveal">
+        <div class="detail-icon-label">
+          <span class="detail-icon">🎯</span>
+          <h2>Business Problem</h2>
+        </div>
+        <div class="detail-text">{{ project.problem|linebreaks }}</div>
+      </div>
+      {% endif %}
+
+      <!-- 4 & 5. Tools + Key Features side by side -->
+      {% with features=project.get_features_list tools=project.get_tools_list %}
+      {% if features or tools %}
+      <div class="detail-block detail-block--split reveal">
+        {% if tools %}
+        <div class="detail-split-col">
+          <div class="detail-icon-label">
+            <span class="detail-icon">🛠️</span>
+            <h2>Tools Used</h2>
+          </div>
+          <div class="project-tools mt-1">
+            {% for tool in tools %}<span class="tag tag-lg">{{ tool }}</span>{% endfor %}
+          </div>
+        </div>
+        {% endif %}
+        {% if features %}
+        <div class="detail-split-col">
+          <div class="detail-icon-label">
+            <span class="detail-icon">⚡</span>
+            <h2>Key Features</h2>
+          </div>
+          <ul class="detail-feature-list">
+            {% for feature in features %}<li>{{ feature }}</li>{% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% endwith %}
+
+      <!-- 6. Role / Contribution -->
+      {% if project.role %}
+      <div class="detail-block reveal">
+        <div class="detail-icon-label">
+          <span class="detail-icon">👤</span>
+          <h2>My Role &amp; Contribution</h2>
+        </div>
+        <div class="detail-text">{{ project.role|linebreaks }}</div>
+      </div>
+      {% endif %}
+
+      <!-- Solution -->
+      {% if project.solution %}
+      <div class="detail-block reveal">
+        <div class="detail-icon-label">
+          <span class="detail-icon">💡</span>
+          <h2>The Solution</h2>
+        </div>
+        <div class="detail-text">{{ project.solution|linebreaks }}</div>
+      </div>
+      {% endif %}
+
+      <!-- 7. Biggest Challenge -->
+      {% if project.challenge %}
+      <div class="detail-block reveal">
+        <div class="detail-icon-label">
+          <span class="detail-icon">⛰️</span>
+          <h2>Biggest Challenge</h2>
+        </div>
+        <div class="detail-text">{{ project.challenge|linebreaks }}</div>
+      </div>
+      {% endif %}
+
+      <!-- 8. What You Learned -->
+      {% if project.learnings %}
+      <div class="detail-block reveal">
+        <div class="detail-icon-label">
+          <span class="detail-icon">🧠</span>
+          <h2>What I Learned</h2>
+        </div>
+        <div class="detail-text">{{ project.learnings|linebreaks }}</div>
+      </div>
+      {% endif %}
+
+      <!-- Outcome -->
+      {% if project.outcome %}
+      <div class="detail-block reveal">
+        <div class="detail-icon-label">
+          <span class="detail-icon">🏆</span>
+          <h2>Outcome &amp; Results</h2>
+        </div>
+        <div class="detail-text">{{ project.outcome|linebreaks }}</div>
+      </div>
+      {% endif %}
+
+      <!-- Project Images — main + gallery, all clickable lightbox -->
+      {% with gallery=project.images.all %}
+      {% if project.image or gallery %}
+      <div class="detail-block reveal">
+        <div class="detail-icon-label">
+          <span class="detail-icon">🖼️</span>
+          <h2>Screenshots</h2>
+        </div>
+
+        {% if project.image %}
+        <div class="project-media-img-wrap" style="margin-bottom:{% if gallery %}1rem{% else %}0{% endif %}">
+          <img
+            src="{{ project.image.url }}"
+            alt="{{ project.title }}"
+            class="project-media-img lightbox-trigger"
+            data-lightbox="{{ project.image.url }}"
+            data-lightbox-alt="{{ project.title }}"
+          >
+          <div class="project-media-hint">🔍 Click to enlarge</div>
+        </div>
+        {% endif %}
+
+        {% if gallery %}
+        <div class="project-gallery">
+          {% for img in gallery %}
+          <div class="project-gallery-item lightbox-trigger"
+               data-lightbox="{{ img.image.url }}"
+               data-lightbox-alt="{{ img.caption|default:project.title }}">
+            <img src="{{ img.image.url }}" alt="{{ img.caption|default:project.title }}" loading="lazy">
+            {% if img.caption %}<p class="gallery-caption">{{ img.caption }}</p>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+      {% endif %}
+      {% endwith %}
+
+      <!-- Demo Video — always shown when a video exists -->
+      {% if project.video %}
+      <div class="detail-block reveal">
+        <div class="detail-icon-label">
+          <span class="detail-icon">🎬</span>
+          <h2>Demo Video</h2>
+        </div>
+        <div class="project-inline-video-wrap">
+          <video class="project-inline-video" controls preload="metadata"
+            {% if project.image %}poster="{{ project.image.url }}"{% endif %}>
+            <source src="{{ project.video.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <aside class="project-detail-sidebar reveal">
+      <div class="sidebar-card">
+        <h4>Tech Stack</h4>
+        <div class="project-tools">
+          {% for tool in project.get_tools_list %}
+          <span class="tag">{{ tool }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if project.github_url or project.demo_url %}
+      <div class="sidebar-card">
+        <h4>Links</h4>
+        {% if project.github_url %}
+        <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          Source Code
+        </a>
+        {% endif %}
+        {% if project.demo_url %}
+        <a href="{{ project.demo_url }}" target="_blank" rel="noopener" class="sidebar-link">
+          🔗 Live Demo
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <a href="{% url 'contact' %}" class="btn btn-primary btn-block">
+        Interested? Let's Talk
+      </a>
+    </aside>
+
+  </div>
+</section>
+
+<!-- Related Projects -->
+{% if related %}
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">More Projects</h2>
+    </div>
+    <div class="projects-grid reveal">
+      {% for rp in related %}
+      <article class="project-card">
+        <a href="{% url 'project_detail' rp.slug %}" class="project-card-link">
+          {% if rp.image %}
+          <div class="project-img-wrap">
+            <img src="{{ rp.image.url }}" alt="{{ rp.title }}" loading="lazy">
+            <div class="project-overlay"><span class="project-view-btn">View →</span></div>
+          </div>
+          {% else %}
+          <div class="project-img-placeholder"><span>{{ rp.title|slice:":2"|upper }}</span></div>
+          {% endif %}
+          <div class="project-body">
+            <h3 class="project-title">{{ rp.title }}</h3>
+            <p class="project-desc">{{ rp.short_description }}</p>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

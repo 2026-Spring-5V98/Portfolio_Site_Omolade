@@ -1,0 +1,207 @@
+{% extends 'MainApp/base.html' %}
+{% load static %}
+
+{% block title %}Resume{% endblock %}
+{% block meta_description %}Professional resume of {{ profile.name }} — experience, education, and certifications.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <span class="section-tag">Career</span>
+      <h1 class="page-title">Resume</h1>
+      <p class="page-subtitle">My professional journey — experience, education, and achievements.</p>
+      <!-- Public download button -->
+      {% if profile.resume_pdf %}
+      <div class="resume-download-bar">
+        <a href="{{ profile.resume_pdf.url }}" download class="btn btn-primary resume-dl-btn" aria-label="Download resume as PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download PDF
+        </a>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container resume-layout">
+
+    <!-- Main timeline -->
+    <div class="resume-main">
+
+      <!-- Profile Summary -->
+      {% if profile.resume_summary %}
+      <div class="resume-block reveal">
+        <div class="resume-block-header">
+          <span class="resume-icon">👤</span>
+          <h2>Professional Summary</h2>
+        </div>
+        <p class="resume-summary">{{ profile.resume_summary }}</p>
+      </div>
+      {% endif %}
+
+      <!-- Experience -->
+      {% if experience %}
+      <div class="resume-block reveal">
+        <div class="resume-block-header">
+          <span class="resume-icon">💼</span>
+          <h2>Work Experience</h2>
+        </div>
+        <div class="timeline">
+          {% for item in experience %}
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="timeline-title">{{ item.title }}</h3>
+                <span class="timeline-date">{{ item.date_range }}</span>
+              </div>
+              {% if item.organization %}
+              <p class="timeline-org">
+                {{ item.organization }}{% if item.location %} &bull; {{ item.location }}{% endif %}
+              </p>
+              {% endif %}
+              {% if item.description %}<p class="timeline-desc">{{ item.description }}</p>{% endif %}
+              {% with bullets=item.get_bullets %}
+              {% if bullets %}
+              <ul class="timeline-bullets">
+                {% for b in bullets %}<li>{{ b }}</li>{% endfor %}
+              </ul>
+              {% endif %}
+              {% endwith %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Education -->
+      {% if education %}
+      <div class="resume-block reveal">
+        <div class="resume-block-header">
+          <span class="resume-icon">🎓</span>
+          <h2>Education</h2>
+        </div>
+        <div class="timeline">
+          {% for item in education %}
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="timeline-title">{{ item.title }}</h3>
+                <span class="timeline-date">{{ item.date_range }}</span>
+              </div>
+              {% if item.organization %}
+              <p class="timeline-org">
+                {{ item.organization }}{% if item.location %} &bull; {{ item.location }}{% endif %}
+              </p>
+              {% endif %}
+              {% if item.description %}<p class="timeline-desc">{{ item.description }}</p>{% endif %}
+              {% with bullets=item.get_bullets %}
+              {% if bullets %}
+              <ul class="timeline-bullets">
+                {% for b in bullets %}<li>{{ b }}</li>{% endfor %}
+              </ul>
+              {% endif %}
+              {% endwith %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Certifications -->
+      {% if certifications %}
+      <div class="resume-block reveal">
+        <div class="resume-block-header">
+          <span class="resume-icon">📜</span>
+          <h2>Certifications</h2>
+        </div>
+        <div class="cert-grid">
+          {% for cert in certifications %}
+          <div class="cert-card reveal">
+            <div class="cert-badge">✓</div>
+            <div>
+              <h4>{{ cert.title }}</h4>
+              {% if cert.organization %}<p class="cert-org">{{ cert.organization }}</p>{% endif %}
+              {% if cert.start_date %}<p class="cert-date">{{ cert.start_date }}</p>{% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Achievements -->
+      {% if achievements %}
+      <div class="resume-block reveal">
+        <div class="resume-block-header">
+          <span class="resume-icon">🏆</span>
+          <h2>Achievements</h2>
+        </div>
+        <div class="timeline">
+          {% for item in achievements %}
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              {% if item.organization %}<p class="timeline-org">{{ item.organization }}</p>{% endif %}
+              {% if item.description %}<p class="timeline-desc">{{ item.description }}</p>{% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="resume-sidebar">
+
+      <!-- Contact Card -->
+      <div class="sidebar-card resume-contact-card reveal">
+        {% if profile.headshot %}
+        <img src="{{ profile.headshot.url }}" alt="{{ profile.name }}" class="resume-headshot">
+        {% endif %}
+        <h3>{{ profile.name|default:"Name" }}</h3>
+        <p class="resume-tagline-sm">{{ profile.tagline }}</p>
+        {% if profile.email %}<p class="resume-contact-line">📧 {{ profile.email }}</p>{% endif %}
+        {% if profile.phone %}<p class="resume-contact-line">📱 {{ profile.phone }}</p>{% endif %}
+        {% if profile.location %}<p class="resume-contact-line">📍 {{ profile.location }}</p>{% endif %}
+        {% if profile.github %}
+        <a href="{{ profile.github }}" target="_blank" rel="noopener" class="resume-social-link">GitHub</a>
+        {% endif %}
+        {% if profile.linkedin %}
+        <a href="{{ profile.linkedin }}" target="_blank" rel="noopener" class="resume-social-link">LinkedIn</a>
+        {% endif %}
+      </div>
+
+      <!-- Skills Card -->
+      {% if all_skills %}
+      <div class="sidebar-card reveal">
+        <h4>Technical Skills</h4>
+        <div class="resume-skills-cloud">
+          {% for skill in all_skills %}
+          <span class="skill-chip skill-level-{{ skill.proficiency }}">{{ skill.name }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <a href="{% url 'contact' %}" class="btn btn-primary btn-block reveal">Book a Meeting</a>
+    </aside>
+
+  </div>
+</section>
+
+{% endblock %}

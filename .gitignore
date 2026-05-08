@@ -1,0 +1,30 @@
+# Secrets
+.env
+
+# Django
+db.sqlite3
+staticfiles/
+media/
+
+# Virtual environment
+portfolio_venv/
+venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code internal
+.claude/

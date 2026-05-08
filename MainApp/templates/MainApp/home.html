@@ -1,0 +1,159 @@
+{% extends 'MainApp/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block meta_description %}{{ profile.tagline|default:"Professional portfolio showcasing projects, skills and experience." }}{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-text reveal">
+      <p class="hero-eyebrow">Hello, I'm</p>
+      <h1 class="hero-name">{{ profile.name|default:"Your Name" }}</h1>
+      <h2 class="hero-tagline typed-text" data-text="{{ profile.tagline|default:'Full-Stack Developer | AI Enthusiast | Problem Solver' }}">
+        {{ profile.tagline|default:"Full-Stack Developer | AI Enthusiast | Problem Solver" }}
+      </h2>
+      {% if profile.bio %}
+      <p class="hero-bio">{{ profile.bio|truncatewords:30 }}</p>
+      {% endif %}
+      <div class="hero-actions">
+        <a href="{% url 'projects' %}" class="btn btn-primary">View My Projects</a>
+        <a href="{% url 'contact' %}" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-social">
+        {% if profile.github %}<a href="{{ profile.github }}" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>{% endif %}
+        {% if profile.linkedin %}<a href="{{ profile.linkedin }}" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>{% endif %}
+      </div>
+    </div>
+    <div class="hero-visual reveal reveal-right">
+      {% if profile.headshot %}
+      <div class="hero-img-wrap">
+        <img src="{{ profile.headshot.url }}" alt="{{ profile.name }}" class="hero-img" loading="eager">
+      </div>
+      {% else %}
+      <div class="hero-placeholder">
+        <span>{{ profile.name|slice:":1"|upper|default:"D" }}</span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <a href="#expertise" class="scroll-down" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 7l5 5 5-5"/></svg>
+  </a>
+</section>
+
+
+<!-- ===== WHAT I DO ===== -->
+<section class="section section-alt" id="expertise">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">What I Do</span>
+      <h2 class="section-title">How I Can Help</h2>
+      <p class="section-subtitle">I specialise in building smart, scalable solutions at the intersection of AI and web development.</p>
+    </div>
+    <div class="expertise-grid">
+      {% for card in expertise_cards %}
+      <div class="expertise-card reveal" style="animation-delay:{{ forloop.counter0 }}20ms">
+        <div class="expertise-num">{{ forloop.counter|stringformat:"02d" }}</div>
+        <div class="expertise-icon expertise-emoji">{{ card.icon }}</div>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+        <a href="{{ card.link_url }}" class="expertise-link">{{ card.link_text }}</a>
+      </div>
+      {% empty %}
+      <p class="text-muted" style="grid-column:1/-1;text-align:center;padding:2rem 0;">
+        No expertise cards yet — add them in the <a href="/admin/MainApp/expertisecard/add/">Django admin</a>.
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FEATURED PROJECTS ===== -->
+<section class="section" id="featured">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Work</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">A selection of my best work — click any project to see the full breakdown.</p>
+    </div>
+
+    {% if featured_projects %}
+    <div class="projects-grid">
+      {% for project in featured_projects %}
+      <article class="project-card reveal" style="animation-delay:{{ forloop.counter0 }}00ms">
+        <a href="{% url 'project_detail' project.slug %}" class="project-card-link">
+          {% if project.image %}
+          <div class="project-img-wrap">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy">
+            {% if project.video %}<span class="project-video-badge">▶ Video</span>{% endif %}
+            <div class="project-overlay"><span class="project-view-btn">View Project →</span></div>
+          </div>
+          {% else %}
+          <div class="project-img-placeholder">
+            <span>{{ project.title|slice:":2"|upper }}</span>
+          </div>
+          {% endif %}
+          <div class="project-body">
+            {% if project.is_featured %}<span class="badge badge-featured">Featured</span>{% endif %}
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-desc">{{ project.short_description }}</p>
+            <div class="project-tools">
+              {% for tool in project.get_tools_list %}{% if forloop.counter <= 4 %}
+              <span class="tag">{{ tool }}</span>
+              {% endif %}{% endfor %}
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-footer reveal">
+      <a href="{% url 'projects' %}" class="btn btn-outline">View All Projects →</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+
+<!-- ===== SKILLS SNAPSHOT ===== -->
+{% if skills_preview %}
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Expertise</span>
+      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <p class="section-subtitle">The tools and technologies I work with every day.</p>
+    </div>
+    <div class="skills-cloud reveal">
+      {% for skill in skills_preview %}
+      <span class="skill-chip skill-level-{{ skill.proficiency }}">{{ skill.name }}</span>
+      {% endfor %}
+    </div>
+    <div class="section-footer reveal">
+      <a href="{% url 'skills' %}" class="btn btn-outline">See Full Skill Set →</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+
+<!-- ===== CTA STRIP ===== -->
+<section class="cta-strip reveal">
+  <div class="container cta-inner">
+    <div>
+      <h2>Ready to work together?</h2>
+      <p>Let's discuss your next project or opportunity.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Get In Touch</a>
+      <a href="{% url 'resume' %}" class="btn btn-ghost btn-lg">View Resume</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
