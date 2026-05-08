@@ -2,7 +2,12 @@ services:
   - type: web
     name: portfolio
     runtime: python
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+    buildCommand: >-
+      pip install -r requirements.txt &&
+      python manage.py collectstatic --noinput &&
+      python manage.py migrate &&
+      python manage.py ensure_superuser &&
+      python manage.py load_initial_data
     startCommand: gunicorn portfolio_site.wsgi:application
     envVars:
       - key: SECRET_KEY
@@ -16,6 +21,14 @@ services:
           name: portfolio-db
           property: connectionString
       # Set these manually in the Render dashboard (Environment tab)
+      - key: DJANGO_SUPERUSER_USERNAME
+        value: admin
+      - key: DJANGO_SUPERUSER_EMAIL
+        sync: false
+      - key: DJANGO_SUPERUSER_PASSWORD
+        sync: false
+      - key: CLOUDINARY_URL
+        sync: false
       - key: GMAIL_ADDRESS
         sync: false
       - key: GMAIL_APP_PASS
