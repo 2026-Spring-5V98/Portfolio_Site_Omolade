@@ -119,6 +119,7 @@ EMAIL_PORT          = 587
 EMAIL_USE_TLS       = True
 EMAIL_HOST_USER     = GMAIL_ADDRESS
 EMAIL_HOST_PASSWORD = GMAIL_APP_PASS
+EMAIL_TIMEOUT       = 10
 DEFAULT_FROM_EMAIL  = GMAIL_ADDRESS or 'noreply@portfolio.com'
 ADMIN_EMAIL         = 'omoladedaniel@gmail.com'
 
