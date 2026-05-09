@@ -32,6 +32,10 @@ _PROJECT_STATIC_IMAGES = {
     'handwritten-digit-recognition-model':       'MainApp/img/projects/ml1Figure_1.png',
 }
 
+_PROJECT_STATIC_VIDEOS = {
+    'google-ai-studio-integration': 'MainApp/videos/google-ai-studio.mp4',
+}
+
 
 def _attach_images(projects):
     for p in projects:
@@ -43,6 +47,14 @@ def _attach_images(projects):
                 p.static_img = ''
         else:
             p.static_img = ''
+        if not p.video:
+            vpath = _PROJECT_STATIC_VIDEOS.get(p.slug, '')
+            try:
+                p.static_video = static(vpath) if vpath else ''
+            except Exception:
+                p.static_video = ''
+        else:
+            p.static_video = ''
     return projects
 
 

@@ -32,6 +32,7 @@
           {% elif project.static_img %}
           <div class="project-img-wrap">
             <img src="{{ project.static_img }}" alt="{{ project.title }}" loading="lazy">
+            {% if project.static_video %}<span class="project-video-badge">▶ Video</span>{% endif %}
             <div class="project-overlay"><span class="project-view-btn">View Details →</span></div>
           </div>
           {% elif project.video %}

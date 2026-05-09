@@ -24,6 +24,12 @@
       <source src="{{ project.video.url }}" type="video/mp4">
     </video>
   </div>
+  {% elif project.static_video %}
+  <div class="project-detail-video-wrap">
+    <video class="project-detail-video" controls preload="metadata">
+      <source src="{{ project.static_video }}" type="video/mp4">
+    </video>
+  </div>
   {% endif %}
   <div class="container project-detail-hero-inner reveal">
     <a href="{% url 'projects' %}" class="back-link">← Back to Projects</a>
