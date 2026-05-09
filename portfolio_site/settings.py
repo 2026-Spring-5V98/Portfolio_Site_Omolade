@@ -79,6 +79,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+WHITENOISE_MIMETYPES = {
+    '.mp4': 'video/mp4',
+    '.webm': 'video/webm',
+}
+WHITENOISE_ALLOW_ALL_ORIGINS = True
 
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL', '')
 USE_CLOUDINARY = CLOUDINARY_URL.startswith('cloudinary://')
