@@ -7,7 +7,8 @@ services:
       python manage.py collectstatic --noinput &&
       python manage.py migrate &&
       python manage.py ensure_superuser &&
-      python manage.py load_initial_data
+      python manage.py load_initial_data &&
+      python manage.py sync_media_env
     startCommand: gunicorn portfolio_site.wsgi:application
     envVars:
       - key: SECRET_KEY
@@ -28,6 +29,12 @@ services:
       - key: DJANGO_SUPERUSER_PASSWORD
         sync: false
       - key: CLOUDINARY_URL
+        sync: false
+      # After uploading headshot/resume via admin, copy the Cloudinary path
+      # from the admin "Currently:" link and paste it here.
+      - key: PROFILE_HEADSHOT
+        sync: false
+      - key: PROFILE_RESUME_PDF
         sync: false
       - key: GMAIL_ADDRESS
         sync: false
