@@ -2,6 +2,15 @@ from django.db import models
 from django.utils.text import slugify
 
 
+def _resume_storage():
+    from django.conf import settings
+    if getattr(settings, 'USE_CLOUDINARY', False):
+        from cloudinary_storage.storage import RawMediaCloudinaryStorage
+        return RawMediaCloudinaryStorage()
+    from django.core.files.storage import FileSystemStorage
+    return FileSystemStorage()
+
+
 class Profile(models.Model):
     name = models.CharField(max_length=100)
     tagline = models.CharField(max_length=200, blank=True)
@@ -18,6 +27,7 @@ class Profile(models.Model):
         upload_to='resume/',
         blank=True,
         null=True,
+        storage=_resume_storage,
         help_text='Upload your resume as a PDF file for public download.',
     )
 
