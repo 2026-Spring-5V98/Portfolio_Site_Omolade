@@ -36,6 +36,14 @@ _PROJECT_STATIC_VIDEOS = {
     'google-ai-studio-integration': 'MainApp/videos/google-ai-studio.mp4',
 }
 
+_PROJECT_STATIC_GALLERY = {
+    'google-ai-studio-integration': [
+        ('MainApp/img/projects/gallery/SubZero_1.png',     'Sub-Zero'),
+        ('MainApp/img/projects/gallery/Scorpion_2.png',    'Scorpion'),
+        ('MainApp/img/projects/gallery/Battlefield_1.png', 'Battlefield'),
+    ],
+}
+
 
 def _attach_images(projects):
     for p in projects:
@@ -55,6 +63,13 @@ def _attach_images(projects):
                 p.static_video = ''
         else:
             p.static_video = ''
+        gallery = []
+        for img_path, caption in _PROJECT_STATIC_GALLERY.get(p.slug, []):
+            try:
+                gallery.append({'url': static(img_path), 'caption': caption})
+            except Exception:
+                pass
+        p.static_gallery = gallery
     return projects
 
 

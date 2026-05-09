@@ -171,7 +171,7 @@
 
       <!-- Project Images — main + gallery, all clickable lightbox -->
       {% with gallery=project.images.all %}
-      {% if project.image or project.static_img or gallery %}
+      {% if project.image or project.static_img or gallery or project.static_gallery %}
       <div class="detail-block reveal">
         <div class="detail-icon-label">
           <span class="detail-icon">🖼️</span>
@@ -210,6 +210,19 @@
                data-lightbox-alt="{{ img.caption|default:project.title }}">
             <img src="{{ img.image.url }}" alt="{{ img.caption|default:project.title }}" loading="lazy">
             {% if img.caption %}<p class="gallery-caption">{{ img.caption }}</p>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if project.static_gallery %}
+        <div class="project-gallery">
+          {% for img in project.static_gallery %}
+          <div class="project-gallery-item lightbox-trigger"
+               data-lightbox="{{ img.url }}"
+               data-lightbox-alt="{{ img.caption }}">
+            <img src="{{ img.url }}" alt="{{ img.caption }}" loading="lazy">
+            <p class="gallery-caption">{{ img.caption }}</p>
           </div>
           {% endfor %}
         </div>
