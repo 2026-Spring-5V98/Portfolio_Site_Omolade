@@ -97,9 +97,9 @@
             {% if project.video %}<span class="project-video-badge">▶ Video</span>{% endif %}
             <div class="project-overlay"><span class="project-view-btn">View Project →</span></div>
           </div>
-          {% elif project._static_img %}
+          {% elif project.static_img %}
           <div class="project-img-wrap">
-            <img src="{{ project._static_img }}" alt="{{ project.title }}" loading="lazy">
+            <img src="{{ project.static_img }}" alt="{{ project.title }}" loading="lazy">
             <div class="project-overlay"><span class="project-view-btn">View Project →</span></div>
           </div>
           {% else %}

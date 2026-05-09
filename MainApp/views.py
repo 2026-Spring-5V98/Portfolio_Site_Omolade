@@ -38,11 +38,11 @@ def _attach_images(projects):
         if not p.image:
             path = _PROJECT_STATIC_IMAGES.get(p.slug, '')
             try:
-                p._static_img = static(path) if path else ''
+                p.static_img = static(path) if path else ''
             except Exception:
-                p._static_img = ''
+                p.static_img = ''
         else:
-            p._static_img = ''
+            p.static_img = ''
     return projects
 
 

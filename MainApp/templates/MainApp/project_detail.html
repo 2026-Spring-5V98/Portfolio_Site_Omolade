@@ -13,9 +13,9 @@
     <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-detail-img">
     <div class="project-detail-img-overlay"></div>
   </div>
-  {% elif project._static_img %}
+  {% elif project.static_img %}
   <div class="project-detail-img-wrap">
-    <img src="{{ project._static_img }}" alt="{{ project.title }}" class="project-detail-img">
+    <img src="{{ project.static_img }}" alt="{{ project.title }}" class="project-detail-img">
     <div class="project-detail-img-overlay"></div>
   </div>
   {% elif project.video %}
