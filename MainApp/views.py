@@ -25,7 +25,7 @@ from .models import (
 
 _PROJECT_STATIC_IMAGES = {
     'ai-chatbot-platform':                       'MainApp/img/projects/chatbotAI.png',
-    'ai-multi-agent-handyman-operations-system': 'MainApp/img/projects/HandymanProject.png',
+    'ai-multi-agent-handyman-operations-system': 'MainApp/img/projects/n8n.png',
     'langchain-autonomous-agent':                'MainApp/img/projects/Langchain.png',
     'google-ai-studio-integration':              'MainApp/img/projects/Battlefield.png',
     'campus-skillswap':                          'MainApp/img/projects/SkillsSwap.png',
