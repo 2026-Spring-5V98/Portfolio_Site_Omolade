@@ -97,6 +97,11 @@
             {% if project.video %}<span class="project-video-badge">▶ Video</span>{% endif %}
             <div class="project-overlay"><span class="project-view-btn">View Project →</span></div>
           </div>
+          {% elif project._static_img %}
+          <div class="project-img-wrap">
+            <img src="{{ project._static_img }}" alt="{{ project.title }}" loading="lazy">
+            <div class="project-overlay"><span class="project-view-btn">View Project →</span></div>
+          </div>
           {% else %}
           <div class="project-img-placeholder">
             <span>{{ project.title|slice:":2"|upper }}</span>

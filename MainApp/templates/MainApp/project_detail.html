@@ -13,6 +13,11 @@
     <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-detail-img">
     <div class="project-detail-img-overlay"></div>
   </div>
+  {% elif project._static_img %}
+  <div class="project-detail-img-wrap">
+    <img src="{{ project._static_img }}" alt="{{ project.title }}" class="project-detail-img">
+    <div class="project-detail-img-overlay"></div>
+  </div>
   {% elif project.video %}
   <div class="project-detail-video-wrap">
     <video class="project-detail-video" controls preload="metadata">

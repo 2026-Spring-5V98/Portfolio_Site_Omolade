@@ -4,6 +4,7 @@ import logging
 import random
 
 from django.conf import settings
+from django.templatetags.static import static
 from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.db import models
@@ -22,6 +23,29 @@ from .models import (
 )
 
 
+_PROJECT_STATIC_IMAGES = {
+    'ai-chatbot-platform':                       'MainApp/img/projects/chatbotAI.png',
+    'ai-multi-agent-handyman-operations-system': 'MainApp/img/projects/HandymanProject.png',
+    'langchain-autonomous-agent':                'MainApp/img/projects/Langchain.png',
+    'google-ai-studio-integration':              'MainApp/img/projects/Battlefield.png',
+    'campus-skillswap':                          'MainApp/img/projects/SkillsSwap.png',
+    'handwritten-digit-recognition-model':       'MainApp/img/projects/ml1Figure_1.png',
+}
+
+
+def _attach_images(projects):
+    for p in projects:
+        if not p.image:
+            path = _PROJECT_STATIC_IMAGES.get(p.slug, '')
+            try:
+                p._static_img = static(path) if path else ''
+            except Exception:
+                p._static_img = ''
+        else:
+            p._static_img = ''
+    return projects
+
+
 def _profile():
     return Profile.objects.first()
 
@@ -31,6 +55,7 @@ def home(request):
     featured_projects = Project.objects.filter(is_featured=True)[:3]
     if not featured_projects.exists():
         featured_projects = Project.objects.all()[:3]
+    _attach_images(featured_projects)
     hero = PageContent.objects.filter(page='home', section='hero', is_active=True).first()
     skills_preview = Skill.objects.all()[:12]
     expertise_cards = ExpertiseCard.objects.filter(is_active=True)
@@ -62,6 +87,7 @@ def about(request):
 
 def projects(request):
     all_projects = Project.objects.all()
+    _attach_images(all_projects)
     context = {
         'profile': _profile(),
         'projects': all_projects,
@@ -71,7 +97,9 @@ def projects(request):
 
 def project_detail(request, slug):
     project = get_object_or_404(Project, slug=slug)
+    _attach_images([project])
     related = Project.objects.exclude(pk=project.pk)[:3]
+    _attach_images(related)
     context = {
         'profile': _profile(),
         'project': project,
