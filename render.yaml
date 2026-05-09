@@ -30,11 +30,11 @@ services:
         sync: false
       - key: CLOUDINARY_URL
         sync: false
-      # After uploading headshot/resume via admin, copy the Cloudinary path
-      # from the admin "Currently:" link and paste it here.
-      - key: PROFILE_HEADSHOT
+      # Paste the FULL public URL of your headshot and resume here.
+      # These override the database so files survive server restarts.
+      - key: PROFILE_HEADSHOT_URL
         sync: false
-      - key: PROFILE_RESUME_PDF
+      - key: PROFILE_RESUME_URL
         sync: false
       - key: GMAIL_ADDRESS
         sync: false

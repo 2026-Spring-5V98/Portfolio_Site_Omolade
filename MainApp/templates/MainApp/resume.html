@@ -24,6 +24,17 @@
           Download PDF
         </a>
       </div>
+      {% elif env_resume_url %}
+      <div class="resume-download-bar">
+        <a href="{{ env_resume_url }}" target="_blank" class="btn btn-primary resume-dl-btn" aria-label="Download resume as PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download PDF
+        </a>
+      </div>
       {% endif %}
 
     </div>
@@ -172,6 +183,8 @@
       <div class="sidebar-card resume-contact-card reveal">
         {% if profile.headshot %}
         <img src="{{ profile.headshot.url }}" alt="{{ profile.name }}" class="resume-headshot">
+        {% elif env_headshot_url %}
+        <img src="{{ env_headshot_url }}" alt="{{ profile.name }}" class="resume-headshot">
         {% endif %}
         <h3>{{ profile.name|default:"Name" }}</h3>
         <p class="resume-tagline-sm">{{ profile.tagline }}</p>

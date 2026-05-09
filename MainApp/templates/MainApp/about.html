@@ -26,6 +26,10 @@
         <div class="about-img-wrap">
           <img src="{{ profile.headshot.url }}" alt="{{ profile.name }}" class="about-img" loading="lazy">
         </div>
+        {% elif env_headshot_url %}
+        <div class="about-img-wrap">
+          <img src="{{ env_headshot_url }}" alt="{{ profile.name }}" class="about-img" loading="lazy">
+        </div>
         {% else %}
         <div class="about-img-placeholder">
           <span>{{ profile.name|slice:":1"|upper|default:"?" }}</span>
